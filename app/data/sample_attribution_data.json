@@ -1,0 +1,163 @@
+{
+  "catalog": {
+    "name": "Northstar Attribution Warehouse Lab",
+    "owner": "Kinetic Gain Analytics Systems",
+    "publication_url": "http://127.0.0.1:5034",
+    "description": "Warehouse-oriented attribution lab for journey stitching, model comparison, weighted credit, and board-ready channel reconciliation."
+  },
+  "journeys": [
+    {
+      "journeyId": "journey-001",
+      "account": "Aperture Cloud",
+      "segment": "Mid-market SaaS",
+      "touches": [
+        {
+          "timestamp": "2026-04-04T09:10:00Z",
+          "channel": "Organic Search",
+          "campaign": "AI Visibility Guide",
+          "stage": "first_touch",
+          "cost": 420
+        },
+        {
+          "timestamp": "2026-04-11T14:35:00Z",
+          "channel": "Paid Social",
+          "campaign": "Pipeline Narrative Retargeting",
+          "stage": "assist",
+          "cost": 640
+        },
+        {
+          "timestamp": "2026-04-18T16:20:00Z",
+          "channel": "Sales Outreach",
+          "campaign": "Executive Briefing Invite",
+          "stage": "last_touch",
+          "cost": 120
+        }
+      ],
+      "pipelineDollars": 180000,
+      "conversionType": "Opportunity Created",
+      "daysToConvert": 14
+    },
+    {
+      "journeyId": "journey-002",
+      "account": "Beacon Freight",
+      "segment": "Industrial",
+      "touches": [
+        {
+          "timestamp": "2026-03-28T12:00:00Z",
+          "channel": "Partner Referral",
+          "campaign": "Integrator Introductions",
+          "stage": "first_touch",
+          "cost": 80
+        },
+        {
+          "timestamp": "2026-04-03T10:10:00Z",
+          "channel": "Email Nurture",
+          "campaign": "Warehouse Cost Case Study",
+          "stage": "assist",
+          "cost": 140
+        },
+        {
+          "timestamp": "2026-04-09T15:12:00Z",
+          "channel": "Direct Traffic",
+          "campaign": "Pricing Page Visit",
+          "stage": "last_touch",
+          "cost": 0
+        }
+      ],
+      "pipelineDollars": 94000,
+      "conversionType": "Meeting Booked",
+      "daysToConvert": 12
+    },
+    {
+      "journeyId": "journey-003",
+      "account": "Cinder Health",
+      "segment": "Healthcare",
+      "touches": [
+        {
+          "timestamp": "2026-04-01T08:05:00Z",
+          "channel": "Paid Search",
+          "campaign": "Care Coordination Queries",
+          "stage": "first_touch",
+          "cost": 560
+        },
+        {
+          "timestamp": "2026-04-07T13:48:00Z",
+          "channel": "Webinar",
+          "campaign": "Operational AI in Healthcare",
+          "stage": "assist",
+          "cost": 260
+        },
+        {
+          "timestamp": "2026-04-16T11:04:00Z",
+          "channel": "Email Nurture",
+          "campaign": "Clinical Workflow Follow-up",
+          "stage": "assist",
+          "cost": 120
+        },
+        {
+          "timestamp": "2026-04-21T17:25:00Z",
+          "channel": "Direct Traffic",
+          "campaign": "Demo Request",
+          "stage": "last_touch",
+          "cost": 0
+        }
+      ],
+      "pipelineDollars": 132000,
+      "conversionType": "Demo Requested",
+      "daysToConvert": 20
+    },
+    {
+      "journeyId": "journey-004",
+      "account": "Delta Ledger",
+      "segment": "Fintech",
+      "touches": [
+        {
+          "timestamp": "2026-04-06T10:18:00Z",
+          "channel": "Organic Search",
+          "campaign": "PCI-DSS Baseline Comparison",
+          "stage": "first_touch",
+          "cost": 360
+        },
+        {
+          "timestamp": "2026-04-13T15:02:00Z",
+          "channel": "ABM Display",
+          "campaign": "Fraud Signal Tracer Expansion",
+          "stage": "assist",
+          "cost": 880
+        },
+        {
+          "timestamp": "2026-04-19T09:30:00Z",
+          "channel": "Sales Outreach",
+          "campaign": "Fintech Architecture Briefing",
+          "stage": "last_touch",
+          "cost": 160
+        }
+      ],
+      "pipelineDollars": 210000,
+      "conversionType": "Opportunity Advanced",
+      "daysToConvert": 13
+    }
+  ],
+  "models": [
+    {
+      "name": "first_touch",
+      "label": "First-Touch",
+      "description": "Assigns full credit to the earliest attributable session in the warehouse journey."
+    },
+    {
+      "name": "last_touch",
+      "label": "Last-Touch",
+      "description": "Assigns full credit to the touchpoint immediately preceding the warehouse conversion event."
+    },
+    {
+      "name": "linear",
+      "label": "Linear",
+      "description": "Splits credit evenly across all attributable touches."
+    },
+    {
+      "name": "position_weighted",
+      "label": "Position Weighted",
+      "description": "Assigns 40% to first touch, 40% to last touch, and spreads the remaining 20% across assists."
+    }
+  ]
+}

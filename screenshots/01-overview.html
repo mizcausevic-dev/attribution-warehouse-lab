@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Attribution Warehouse Lab - Overview</title>
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --ink: #1c1e26;
+      --muted: #6d7585;
+      --panel: #fffdf8;
+      --line: #d9d3ca;
+      --accent: #2d63ff;
+      --accent-soft: #e7edff;
+      --warm: #f2d8a7;
+      --green: #1f8f63;
+      --shadow: 0 22px 50px rgba(51, 45, 35, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(45,99,255,0.09), transparent 26%),
+        linear-gradient(180deg, #f7f1e7 0%, var(--bg) 100%);
+      color: var(--ink);
+    }
+    .page {
+      width: 1440px;
+      min-height: 930px;
+      margin: 0 auto;
+      padding: 42px 48px 60px;
+    }
+    .frame {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: rgba(255,253,248,0.92);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 30px 34px 34px;
+      background:
+        radial-gradient(circle at top right, rgba(45,99,255,0.12), transparent 30%),
+        linear-gradient(180deg, #fffdfa 0%, #f7f1e8 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 68px;
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      max-width: 1040px;
+    }
+    .lede {
+      margin-top: 18px;
+      max-width: 900px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.6;
+    }
+    .pill-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid #c9d5ff;
+      background: var(--accent-soft);
+      color: #2346b7;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .section {
+      padding: 28px 32px 34px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .stat {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      min-height: 172px;
+    }
+    .stat .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .stat .value {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 54px;
+      line-height: 0.92;
+      margin-bottom: 12px;
+    }
+    .stat .copy {
+      color: #505867;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .banner {
+      margin-top: 24px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      border: 1px solid #ccd8ff;
+      background: linear-gradient(90deg, rgba(45,99,255,0.09), rgba(45,99,255,0.03));
+      color: #2748b2;
+      font-size: 16px;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+    .grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 24px;
+    }
+    .card {
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 22px;
+      min-height: 250px;
+    }
+    .card .kicker {
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .card h2 {
+      margin: 0 0 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+    .card p, .card li {
+      margin: 0;
+      color: #596171;
+      font-size: 15px;
+      line-height: 1.58;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .footer-note {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #ebe3d7;
+      color: #3c4658;
+      font-size: 14px;
+    }
+    .table-shell {
+      margin-top: 24px;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 16px 18px;
+      text-align: left;
+      vertical-align: top;
+    }
+    thead th {
+      background: #f8f3eb;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+    }
+    tbody tr + tr td {
+      border-top: 1px solid #ede7de;
+    }
+    .mono {
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 13px;
+    }
+    .sql-panel {
+      margin-top: 24px;
+      border-radius: 22px;
+      border: 1px solid #22314d;
+      background: #121828;
+      color: #d9e5ff;
+      padding: 22px;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .two-col {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1.1fr 0.9fr;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="frame">
+      <div class="hero">
+        <div class="eyebrow">attribution warehouse lab</div>
+        
+      <h1>Warehouse-first attribution that leadership can actually interrogate.</h1>
+      <p class="lede">
+        Attribution Warehouse Lab stitches journey touchpoints, compares competing
+        allocation models, and publishes the SQL contract layer so sourced pipeline,
+        influenced revenue, and weighted credit can all be reviewed from the same system.
+      </p>
+      <div class="pill-row">
+        <div class="pill">journey stitching</div>
+        <div class="pill">first / last / linear / weighted</div>
+        <div class="pill">channel credit mart</div>
+        <div class="pill">warehouse contracts</div>
+      </div>
+      <div class="section">
+        <div class="stats">
+          <div class="stat"><div class="label">Journeys</div><div class="value">4</div><div class="copy">Attributed account journeys that actually converted instead of generic web analytics traffic.</div></div>
+          <div class="stat"><div class="label">Channels</div><div class="value">9</div><div class="copy">Distinct sources competing for credit across the modeled warehouse journeys.</div></div>
+          <div class="stat"><div class="label">Touches</div><div class="value">13</div><div class="copy">Individual touchpoints stitched into end-to-end account narratives.</div></div>
+          <div class="stat"><div class="label">Pipeline</div><div class="value">$616,000</div><div class="copy">Total attributable pipeline carried through the sample warehouse fact layer.</div></div>
+        </div>
+        <div class="banner">Use the warehouse view to reconcile sourced, influenced, and weighted credit before leadership locks budget on a single attribution story.</div>
+        <div class="grid">
+          <div class="card"><div class="kicker">First-Touch</div><h2>Assigns full credit to the earliest attributable session in the warehouse journey.</h2><p>The same journey set can tell four different budget stories. This repo makes that contrast explicit instead of burying it in slideware.</p><div class="footer-note">Top channel: Organic Search · Allocated pipeline $390,000</div></div><div class="card"><div class="kicker">Last-Touch</div><h2>Assigns full credit to the touchpoint immediately preceding the warehouse conversion event.</h2><p>The same journey set can tell four different budget stories. This repo makes that contrast explicit instead of burying it in slideware.</p><div class="footer-note">Top channel: Sales Outreach · Allocated pipeline $390,000</div></div><div class="card"><div class="kicker">Linear</div><h2>Splits credit evenly across all attributable touches.</h2><p>The same journey set can tell four different budget stories. This repo makes that contrast explicit instead of burying it in slideware.</p><div class="footer-note">Top channel: Organic Search · Allocated pipeline $130,000</div></div><div class="card"><div class="kicker">Position Weighted</div><h2>Assigns 40% to first touch, 40% to last touch, and spreads the remaining 20% across assists.</h2><p>The same journey set can tell four different budget stories. This repo makes that contrast explicit instead of burying it in slideware.</p><div class="footer-note">Top channel: Organic Search · Allocated pipeline $156,000</div></div>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+  </div>
+</body>
+</html>
