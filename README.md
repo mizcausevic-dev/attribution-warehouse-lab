@@ -36,7 +36,7 @@ Most attribution debates fail for predictable reasons:
 ## Local Run
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\attribution-warehouse-lab"
+cd attribution-warehouse-lab
 py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m app.main
